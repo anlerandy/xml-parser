@@ -1,0 +1,712 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<ns2:findRDVPointRetraitAcheminementResponse xmlns:ns2="http://v2.pointretrait.geopost.com/">
+			<return>
+				<errorCode>0</errorCode>
+				<errorMessage>Code retour OK</errorMessage>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>199 BOULEVARD MALESHERBES</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.888856</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.303966</coordGeolocalisationLongitude>
+					<distanceEnMetre>15</distanceEnMetre>
+					<horairesOuvertureDimanche>10:30-14:30 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>10:30-13:00 14:00-19:30</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>10:30-13:00 14:00-17:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>10:30-13:00 14:00-19:30</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>10:30-13:00 14:00-19:30</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>00:00-00:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>10:30-15:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>106750</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>OPTIQUE MALESHERBES</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>68 BOULEVARD BERTHIER</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.891176</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.305744</coordGeolocalisationLongitude>
+					<distanceEnMetre>277</distanceEnMetre>
+					<horairesOuvertureDimanche>00:00-00:00 12:00-20:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>00:00-00:00 12:00-20:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>00:00-00:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>00:00-00:00 12:00-20:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>00:00-00:00 12:00-20:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>00:00-00:00 12:00-20:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>00:00-00:00 12:00-20:00</horairesOuvertureVendredi>
+					<identifiant>997158</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>SUPERMARCHE BERTHIER</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>108 AVENUE DE WAGRAM</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.883391</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.302115</coordGeolocalisationLongitude>
+					<distanceEnMetre>632</distanceEnMetre>
+					<horairesOuvertureDimanche>00:00-00:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>10:00-19:00 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>10:00-19:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>10:00-19:00 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>10:00-19:00 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>09:00-13:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>10:00-19:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>755170</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>BUREAU DE POSTE PARIS 17 WAGRAM</nom>
+					<periodeActiviteHoraireDeb>06/07</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/08</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>BPR</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R01</reseau>
+					<distributionSort></distributionSort>
+					<lotAcheminement></lotAcheminement>
+					<versionPlanTri></versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>15 PLACE FRANCOISE DORIN</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.889262</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.313449</coordGeolocalisationLongitude>
+					<distanceEnMetre>680</distanceEnMetre>
+					<horairesOuvertureDimanche>10:00-19:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>10:00-20:00 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>10:00-20:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>10:00-20:00 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>10:00-20:00 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>10:00-20:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>10:00-20:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>109363</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>CONSIGNE PICKUP LEROY MERLIN APPART - RETRAIT 3J</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>true</accesPersonneMobiliteReduite>
+					<adresse1>22 B RUE D ALSACE</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>92300</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.891</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.2952</coordGeolocalisationLongitude>
+					<distanceEnMetre>695</distanceEnMetre>
+					<horairesOuvertureDimanche>00:00-00:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>08:30-19:00 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>08:30-19:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>08:30-19:00 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>08:30-19:00 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>08:30-12:30 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>08:30-19:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>921410</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>LEVALLOIS PERRET</localite>
+					<nom>BUREAU DE POSTE LEVALLOIS PERRET EIFFEL BP</nom>
+					<periodeActiviteHoraireDeb>06/07</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/07</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>BPR</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R01</reseau>
+					<distributionSort></distributionSort>
+					<lotAcheminement></lotAcheminement>
+					<versionPlanTri></versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>145 B RUE CARDINET</adresse1>
+					<adresse2>DANS LE HALL DE LA GARE</adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.887577</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.314156</coordGeolocalisationLongitude>
+					<distanceEnMetre>746</distanceEnMetre>
+					<horairesOuvertureDimanche>05:00-23:59 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>05:00-23:59 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>05:00-23:59 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>05:00-23:59 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>05:00-23:59 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>05:00-23:59 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>05:00-23:59 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>008343</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>CONSIGNE PICKUP GARE PONT CARDINET - RETRAIT 3J</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>140 AVENUE DE VILLIERS</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.8855</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.29396</coordGeolocalisationLongitude>
+					<distanceEnMetre>837</distanceEnMetre>
+					<horairesOuvertureDimanche>00:00-00:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>09:30-12:30 14:00-18:30</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>09:30-12:30 14:00-18:30</horairesOuvertureLundi>
+					<horairesOuvertureMardi>09:30-12:30 14:00-18:30</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>09:30-12:30 14:00-18:30</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>09:30-12:30 14:00-18:30</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>09:30-12:30 14:00-18:30</horairesOuvertureVendredi>
+					<identifiant>997985</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>DEMENAGERSEUL</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>23 B RUE LEGENDRE</adresse1>
+					<adresse2>DANS LE SAS D ENTREE</adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.883897</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.313698</coordGeolocalisationLongitude>
+					<distanceEnMetre>893</distanceEnMetre>
+					<horairesOuvertureDimanche>06:00-22:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>06:00-22:00 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>06:00-22:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>06:00-22:00 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>06:00-22:00 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>06:00-22:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>06:00-22:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>096311</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>CONSIGNE 6H-22H POSTE DEBUSSY - RETRAIT 3J</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>23 B RUE LEGENDRE</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.88396</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.313929</coordGeolocalisationLongitude>
+					<distanceEnMetre>902</distanceEnMetre>
+					<horairesOuvertureDimanche>00:00-00:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>10:00-19:00 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>10:00-19:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>10:00-19:00 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>10:00-19:00 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>09:00-13:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>10:00-19:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>757040</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>BUREAU DE POSTE PARIS DEBUSSY</nom>
+					<periodeActiviteHoraireDeb>06/07</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>29/08</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>BPR</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R01</reseau>
+					<distributionSort></distributionSort>
+					<lotAcheminement></lotAcheminement>
+					<versionPlanTri></versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>2 RUE DE PARIS</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>92110</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.896615</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.308586</coordGeolocalisationLongitude>
+					<distanceEnMetre>916</distanceEnMetre>
+					<horairesOuvertureDimanche>10:00-13:00 14:00-19:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>10:00-13:00 14:45-19:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>10:00-19:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>10:00-19:00 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>10:00-19:00 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>10:00-19:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>10:00-19:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>108449</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>CLICHY</localite>
+					<nom>TH TRANSPORTS</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>92P40</distributionSort>
+					<lotAcheminement>IVN0</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>190 AVENUE DE CLICHY</adresse1>
+					<adresse2>SORTIE 1 RER, A L ENTREE DE LA GARE</adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.894323</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.313872</coordGeolocalisationLongitude>
+					<distanceEnMetre>931</distanceEnMetre>
+					<horairesOuvertureDimanche>06:30-23:59 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>06:30-23:59 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>06:30-23:59 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>06:30-23:59 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>06:30-23:59 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>06:30-23:59 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>06:30-23:59 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>096931</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>CONSIGNE PICKUP GARE PORTE CLICHY - RETRAIT 3J</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>1 DOCTEUR EMILE ROUX</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>92110</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.897691</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.307581</coordGeolocalisationLongitude>
+					<distanceEnMetre>1008</distanceEnMetre>
+					<horairesOuvertureDimanche>00:00-00:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>08:30-19:30 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>08:30-19:30 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>08:30-19:30 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>08:30-19:30 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>09:00-19:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>08:30-19:30 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>103277</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>CLICHY</localite>
+					<nom>AF PRESSING</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>92P40</distributionSort>
+					<lotAcheminement>IVN0</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>16 BOULEVARD JEAN JAURES</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>92110</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.897715</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.308375</coordGeolocalisationLongitude>
+					<distanceEnMetre>1026</distanceEnMetre>
+					<horairesOuvertureDimanche>09:00-13:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>09:00-20:00 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>09:00-20:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>09:00-20:00 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>09:00-20:00 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>09:00-20:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>09:00-20:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>998961</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<listeConges>
+						<calendarDeDebut>2020-07-03T00:00:00+02:00</calendarDeDebut>
+						<calendarDeFin>2021-01-07T00:00:00+01:00</calendarDeFin>
+						<numero>1</numero>
+					</listeConges>
+					<localite>CLICHY</localite>
+					<nom>INTERMARCHE</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>92P40</distributionSort>
+					<lotAcheminement>IVN0</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>19 RUE DES MOINES</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.888621</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.319119</coordGeolocalisationLongitude>
+					<distanceEnMetre>1094</distanceEnMetre>
+					<horairesOuvertureDimanche>00:00-00:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>10:45-13:00 14:30-19:30</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>00:00-00:00 14:30-19:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>10:45-13:00 14:30-19:30</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>10:45-13:00 14:30-19:30</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>00:00-00:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>10:45-13:00 14:30-19:30</horairesOuvertureVendredi>
+					<identifiant>998032</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>VUE D AILLEURS</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>141 AVENUE DE CLICHY</adresse1>
+					<adresse2>DANS LE SAS D ENTREE</adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.891097</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.319106</coordGeolocalisationLongitude>
+					<distanceEnMetre>1119</distanceEnMetre>
+					<horairesOuvertureDimanche>08:00-22:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>08:00-22:00 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>08:00-22:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>08:00-22:00 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>08:00-22:00 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>08:00-22:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>08:00-22:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>096315</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>CONSIGNE PICKUP POSTE BROCHANT - RETRAIT 3J</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>true</accesPersonneMobiliteReduite>
+					<adresse1>141 AVENUE DE CLICHY</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.891062</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.319245</coordGeolocalisationLongitude>
+					<distanceEnMetre>1129</distanceEnMetre>
+					<horairesOuvertureDimanche></horairesOuvertureDimanche>
+					<horairesOuvertureJeudi></horairesOuvertureJeudi>
+					<horairesOuvertureLundi></horairesOuvertureLundi>
+					<horairesOuvertureMardi></horairesOuvertureMardi>
+					<horairesOuvertureMercredi></horairesOuvertureMercredi>
+					<horairesOuvertureSamedi></horairesOuvertureSamedi>
+					<horairesOuvertureVendredi></horairesOuvertureVendredi>
+					<identifiant>750640</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>BUREAU DE POSTE PARIS BROCHANT</nom>
+					<periodeActiviteHoraireDeb></periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin></periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>BPR</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R01</reseau>
+					<distributionSort></distributionSort>
+					<lotAcheminement></lotAcheminement>
+					<versionPlanTri></versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>12 RUE POUCHET</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.892205</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.319206</coordGeolocalisationLongitude>
+					<distanceEnMetre>1159</distanceEnMetre>
+					<horairesOuvertureDimanche>09:00-14:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>09:00-20:30 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>09:00-20:30 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>09:00-20:30 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>09:00-20:30 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>09:00-20:30 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>09:00-20:30 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>105856</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>FRANPRIX POUCHET</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>5 RUE GUY MOQUET</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>75017</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.891448</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.319677</coordGeolocalisationLongitude>
+					<distanceEnMetre>1169</distanceEnMetre>
+					<horairesOuvertureDimanche>00:00-00:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>10:30-21:00 00:00-00:00</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>10:30-21:00 00:00-00:00</horairesOuvertureLundi>
+					<horairesOuvertureMardi>10:30-21:00 00:00-00:00</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>10:30-21:00 00:00-00:00</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>10:30-21:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>10:30-21:00 00:00-00:00</horairesOuvertureVendredi>
+					<identifiant>987547</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<localite>PARIS</localite>
+					<nom>COPIES PARIS</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>98T40</distributionSort>
+					<lotAcheminement>NEY1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<listePointRetraitAcheminement>
+					<accesPersonneMobiliteReduite>false</accesPersonneMobiliteReduite>
+					<adresse1>23 RUE HENRI BARBUSSE</adresse1>
+					<adresse2></adresse2>
+					<adresse3></adresse3>
+					<codePostal>92300</codePostal>
+					<congesPartiel>false</congesPartiel>
+					<congesTotal>false</congesTotal>
+					<coordGeolocalisationLatitude>48.890044</coordGeolocalisationLatitude>
+					<coordGeolocalisationLongitude>2.287805</coordGeolocalisationLongitude>
+					<distanceEnMetre>1202</distanceEnMetre>
+					<horairesOuvertureDimanche>00:00-00:00 00:00-00:00</horairesOuvertureDimanche>
+					<horairesOuvertureJeudi>10:00-13:00 15:00-19:30</horairesOuvertureJeudi>
+					<horairesOuvertureLundi>10:00-13:00 15:00-19:30</horairesOuvertureLundi>
+					<horairesOuvertureMardi>10:00-13:00 15:00-19:30</horairesOuvertureMardi>
+					<horairesOuvertureMercredi>10:00-13:00 15:00-19:30</horairesOuvertureMercredi>
+					<horairesOuvertureSamedi>00:00-00:00 00:00-00:00</horairesOuvertureSamedi>
+					<horairesOuvertureVendredi>10:00-13:00 15:00-19:30</horairesOuvertureVendredi>
+					<identifiant>997584</identifiant>
+					<indiceDeLocalisation></indiceDeLocalisation>
+					<listeConges>
+						<calendarDeDebut>2020-07-13T00:00:00+02:00</calendarDeDebut>
+						<calendarDeFin>2020-07-13T00:00:00+02:00</calendarDeFin>
+						<numero>2</numero>
+					</listeConges>
+					<listeConges>
+						<calendarDeDebut>2020-03-17T00:00:00+01:00</calendarDeDebut>
+						<calendarDeFin>2020-07-08T00:00:00+02:00</calendarDeFin>
+						<numero>1</numero>
+					</listeConges>
+					<localite>LEVALLOIS PERRET</localite>
+					<nom>KAMILOO (LE PAPIER MALIN)</nom>
+					<periodeActiviteHoraireDeb>01/01</periodeActiviteHoraireDeb>
+					<periodeActiviteHoraireFin>31/12</periodeActiviteHoraireFin>
+					<poidsMaxi>20000</poidsMaxi>
+					<typeDePoint>A2P</typeDePoint>
+					<codePays>FR</codePays>
+					<langue>FR</langue>
+					<libellePays>FRANCE</libellePays>
+					<loanOfHandlingTool>false</loanOfHandlingTool>
+					<parking>false</parking>
+					<reseau>R03</reseau>
+					<distributionSort>92T80</distributionSort>
+					<lotAcheminement>IVN1</lotAcheminement>
+					<versionPlanTri>3</versionPlanTri>
+				</listePointRetraitAcheminement>
+				<qualiteReponse>2</qualiteReponse>
+				<wsRequestId>c0333e98d22122f34da629ad918e94d01f39f413b29d5c7a2cdc3ee4be917ce8</wsRequestId>
+				<rdv>false</rdv>
+			</return>
+		</ns2:findRDVPointRetraitAcheminementResponse>
+	</soap:Body>
+</soap:Envelope>
