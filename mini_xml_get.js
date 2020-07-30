@@ -63,27 +63,20 @@ export const getXmlAttributesByName = (xml, name) => {
 export const getXmlAttributeByName = (xml, name) => getXmlAttributesByName(xml, name)[0];
 
 const getElements = xml => {
-  if (!xml) return {};
+  if (!xml) return undefined;
   const rex = /<(?<name>.*?)(\s.*?>|>)(.*?)<\/(.*?)>/g;
   const res = rex.exec(xml);
   if (!res || !res.length || !res['groups'] || !res['groups'].name) return xml;
   const { name } = res['groups'];
-  // console.log({ elements, groups: elements['groups'] });
   const elements = getXmlElementsByName(xml, name);
   const attributes = getXmlAttributeByName(xml, name);
-  // console.log({ name, elements });
-  // const newXML = xml.replace(new RegExp(`<${name}(.*?)>`), '').replace(new RegExp(`(.*?)</${name}>`), '');
-  const newXml = xml.replace(new RegExp(`<${name}(\\b.*?>|>)(.*?)</${name}>`), '');
+  const newXml = xml.replace(new RegExp(`<${name}(\\b.*?>|>)(.*?)</${name}>`, 'gi'), '');
   let newElem = getElements(newXml);
   if (typeof newElem !== 'object') newElem = { trash: newElem };
-  // console.log({ newElem });
-  // console.log({ elements });
-  // console.log({ name });
   if (Object.keys(attributes || {}).length)
     if (elements.length > 1) {
-      // console.log({ length: elements.length });
       return {
-        [name]: [elements.map(getElements)],
+        [name]: elements.map(getElements),
         [`${name}_attr`]: attributes,
         ...newElem
       };
@@ -94,8 +87,7 @@ const getElements = xml => {
         ...newElem
       };
   else if (elements.length > 1) {
-    // console.log({ length: elements.length });
-    return { [name]: [elements.map(getElements)], ...newElem };
+    return { [name]: elements.map(getElements), ...newElem };
   } else return { [name]: getElements(elements[0]), ...newElem };
 };
 
@@ -103,6 +95,6 @@ export const parse = xml => {
   xml = xml.replace(/\<\?xml(.*?)\?\>/gim, '');
   const elements = getElements(xml);
   return elements;
-  // console.log({ elements });
-  // console.log(JSON.stringify(elements, null, 4));
 };
+
+export default parse;
