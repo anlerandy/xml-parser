@@ -1,5 +1,4 @@
 const baliseContent = (balise, content, attributes = []) => {
-  if (Array.isArray(content)) return content.map(el => baliseContent(balise, el)).join('');
   return `<${balise}${attributes.join(' ')}>${`${content}`.replace(/\n/gi, '\n\t')}</${balise}>`;
 };
 
