@@ -1,3 +1,35 @@
+const baliseContent = (balise, content, attributes = []) => {
+  if (Array.isArray(content)) return content.map(el => baliseContent(balise, el)).join('');
+  return `<${balise}${attributes.join(' ')}>${`${content}`.replace(/\n/gi, '\n\t')}</${balise}>`;
+};
+
+const head = '<?xml version="1.0" encoding="UTF-8"?>';
+
+// TODO: Push attributes in xml balise.
+const generateAttr = obj => {
+  return [];
+};
+
+const generateXML = obj => {
+  const keys = Object.keys(obj);
+  const lines = keys.map(key => {
+    const value = obj[key];
+    if (!value) return baliseContent(key, '');
+    if (Array.isArray(value)) return baliseContent(key, value.map(generateXML));
+    if (typeof value === 'string' || typeof value === 'number') return baliseContent(key, value);
+    if (typeof value === 'object' && !Array.isArray(value))
+      return baliseContent(key, generateXML(value));
+    return baliseContent(key, '');
+  });
+  return lines.join('');
+};
+
+export const fromObject = object => {
+  const set = generateXML(object);
+  const xml = head + '\n' + set;
+  return xml;
+};
+
 const getTargetElements = (xml, name) => {
   const rex = new RegExp(`<${name}(\\b.*?>|>)(.*?)</${name}>`, 'gm');
   const elements = xml.match(rex);

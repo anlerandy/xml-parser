@@ -7,7 +7,7 @@ const xmlFile = fs
   .replace(/\t/gi, '')
   .replace(/\n/gi, '');
 
-const PDRs = XML.getXmlElementsByName(xmlFile, 'order');
+// const PDRs = XML.getXmlElementsByName(xmlFile, 'order');
 
 const neededElements = [
   'adresse1',
@@ -27,3 +27,5 @@ const neededElements = [
 
 const elements = XML.parse(xmlFile);
 console.log(JSON.stringify(elements, null, 4));
+const fromObject = XML.fromObject(elements);
+console.log(JSON.stringify(fromObject, null, 4));
