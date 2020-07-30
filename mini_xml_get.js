@@ -1,10 +1,8 @@
-const baliseContent = (balise, content, attributes = []) => {
-  return `<${balise}${attributes.join(' ')}>${`${content}`.replace(/\n/gi, '\n\t')}</${balise}>`;
-};
+const baliseContent = (balise, content, attributes = []) =>
+  `<${balise}${attributes.join(' ')}>${`${content}`.replace(/\n/gi, '\n\t')}</${balise}>`;
 
 const head = '<?xml version="1.0" encoding="UTF-8"?>';
 
-// TODO: Push attributes in xml balise.
 const generateAttr = obj => {
   return [];
 };
@@ -23,7 +21,7 @@ const generateXML = obj => {
   return lines.join('');
 };
 
-export const fromObject = object => {
+const fromObject = object => {
   const set = generateXML(object);
   const xml = head + '\n' + set;
   return xml;
@@ -35,7 +33,7 @@ const getTargetElements = (xml, name) => {
   return elements || [];
 };
 
-export const getXmlElementsByName = (xml, name) => {
+const getXmlElementsByName = (xml, name) => {
   if (!xml || !name) return [];
   const elements = getTargetElements(xml, name);
   const purifiedElems = elements.map(elem =>
@@ -44,9 +42,9 @@ export const getXmlElementsByName = (xml, name) => {
   return purifiedElems || [];
 };
 
-export const getXmlElementByName = (xml, name) => getXmlElementsByName(xml, name)[0];
+const getXmlElementByName = (xml, name) => getXmlElementsByName(xml, name)[0];
 
-export const objifyElementsByNames = (xml, names = []) => {
+const objifyElementsByNames = (xml, names = []) => {
   const purifiedElems = names.reduce(
     (acc, name) => ({ ...acc, [`${name}`]: getXmlElementsByName(xml, name) }),
     {}
@@ -59,13 +57,12 @@ export const objifyElementsByNames = (xml, names = []) => {
   return objifiedElems;
 };
 
-export const cleanedObjifyElementsByNames = (xml, names = []) =>
-  objifyElementsByNames(xml, names)[0];
+const cleanedObjifyElementsByNames = (xml, names = []) => objifyElementsByNames(xml, names)[0];
 
-export const getXmlSectionsByNames = (xml, names = []) =>
+const getXmlSectionsByNames = (xml, names = []) =>
   names.reduce((_, name) => _ && getXmlElementsByName(_, name)[0], xml);
 
-export const getXmlSectionByNames = (xml, names = []) => getXmlSectionsByNames(xml, names)[0];
+const getXmlSectionByNames = (xml, names = []) => getXmlSectionsByNames(xml, names)[0];
 
 const objifyAttr = (attributes, obj = {}) => {
   if (!attributes) return obj;
@@ -77,7 +74,7 @@ const objifyAttr = (attributes, obj = {}) => {
   return objifyAttr(rest, { ...obj, [key.trim()]: value });
 };
 
-export const getXmlAttributesByName = (xml, name) => {
+const getXmlAttributesByName = (xml, name) => {
   const strings = getTargetElements(xml, name);
   const rex = new RegExp(`<${name}(.*?)>`);
   const exec = string => {
@@ -91,7 +88,7 @@ export const getXmlAttributesByName = (xml, name) => {
   return result;
 };
 
-export const getXmlAttributeByName = (xml, name) => getXmlAttributesByName(xml, name)[0];
+const getXmlAttributeByName = (xml, name) => getXmlAttributesByName(xml, name)[0];
 
 const getElements = xml => {
   if (!xml) return undefined;
@@ -122,10 +119,24 @@ const getElements = xml => {
   } else return { [name]: getElements(elements[0]), ...newElem };
 };
 
-export const parse = xml => {
+const parse = xml => {
   xml = xml.replace(/\<\?xml(.*?)\?\>/gim, '');
   const elements = getElements(xml);
   return elements;
 };
 
-export default parse;
+// export default parse;
+const XML = {
+  getXmlElementsByName,
+  getXmlElementByName,
+  objifyElementsByNames,
+  cleanedObjifyElementsByNames,
+  getXmlSectionsByNames,
+  getXmlSectionByNames,
+  getXmlAttributesByName,
+  getXmlAttributeByName,
+  parse,
+  fromObject
+};
+
+module.exports = XML;
