@@ -12,7 +12,7 @@ const generateXML = obj => {
   const lines = keys.map(key => {
     const value = obj[key];
     if (!value) return baliseContent(key, '');
-    if (Array.isArray(value)) return baliseContent(key, value.map(generateXML));
+    if (Array.isArray(value)) return baliseContent(key, value.map(generateXML).join(''));
     if (typeof value === 'string' || typeof value === 'number') return baliseContent(key, value);
     if (typeof value === 'object' && !Array.isArray(value))
       return baliseContent(key, generateXML(value));
