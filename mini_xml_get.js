@@ -3,13 +3,13 @@ const baliseContent = (balise, content, attributes = []) =>
 
 const head = '<?xml version="1.0" encoding="UTF-8"?>';
 
-const generateAttr = obj => {
+const generateAttr = (obj) => {
   return [];
 };
 
-const generateXML = obj => {
+const generateXML = (obj) => {
   const keys = Object.keys(obj);
-  const lines = keys.map(key => {
+  const lines = keys.map((key) => {
     const value = obj[key];
     if (!value) return baliseContent(key, '');
     if (Array.isArray(value)) return baliseContent(key, value.map(generateXML).join(''));
@@ -21,7 +21,7 @@ const generateXML = obj => {
   return lines.join('');
 };
 
-const fromObject = object => {
+const fromObject = (object) => {
   const set = generateXML(object);
   const xml = head + '\n' + set;
   return xml;
@@ -36,8 +36,11 @@ const getTargetElements = (xml, name) => {
 const getXmlElementsByName = (xml, name) => {
   if (!xml || !name) return [];
   const elements = getTargetElements(xml, name);
-  const purifiedElems = elements.map(elem =>
-    elem.replace(new RegExp(`<${name}(\\b.*?>|>)(.*?)`), '').replace(`</${name}>`, '')
+  const purifiedElems = elements.map((elem) =>
+    elem
+      .replace(new RegExp(`<${name}(\\b.*?>|>)(.*?)`), '')
+      .replace(`</${name}>`, '')
+      .trim()
   );
   return purifiedElems || [];
 };
@@ -70,14 +73,14 @@ const objifyAttr = (attributes, obj = {}) => {
   const res = rex.exec(attributes);
   const [fetched, key, value] = res || [];
   const rest = attributes.replace(fetched, '');
-  if (!rest) return { ...obj, [key.trim()]: value };
-  return objifyAttr(rest, { ...obj, [key.trim()]: value });
+  if (!rest) return { ...obj, [key.trim()]: value.trim() };
+  return objifyAttr(rest, { ...obj, [key.trim()]: value.trim() });
 };
 
 const getXmlAttributesByName = (xml, name) => {
   const strings = getTargetElements(xml, name);
   const rex = new RegExp(`<${name}(.*?)>`);
-  const exec = string => {
+  const exec = (string) => {
     const res = rex.exec(string);
     if (!Array.isArray(res) && !res.length) return '';
     const attributes = res[1];
@@ -90,7 +93,7 @@ const getXmlAttributesByName = (xml, name) => {
 
 const getXmlAttributeByName = (xml, name) => getXmlAttributesByName(xml, name)[0];
 
-const getElements = xml => {
+const getElements = (xml) => {
   if (!xml) return undefined;
   const rex = /<(?<name>.*?)(\s.*?>|>)(.*?)<\/(.*?)>/g;
   const res = rex.exec(xml);
@@ -100,6 +103,8 @@ const getElements = xml => {
   const attributes = getXmlAttributeByName(xml, name);
   const newXml = xml.replace(new RegExp(`<${name}(\\b.*?>|>)(.*?)</${name}>`, 'gi'), '');
   let newElem = getElements(newXml);
+  if (typeof newElem === 'string') newElem = newElem.trim();
+  if (!newElem) newElem = null;
   if (typeof newElem !== 'object') newElem = { trash: newElem };
   if (Object.keys(attributes || {}).length)
     if (elements.length > 1) {
@@ -119,7 +124,7 @@ const getElements = xml => {
   } else return { [name]: getElements(elements[0]), ...newElem };
 };
 
-const parse = xml => {
+const parse = (xml) => {
   xml = xml.replace(/\<\?xml(.*?)\?\>/gim, '');
   const elements = getElements(xml);
   return elements;
