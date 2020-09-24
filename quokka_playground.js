@@ -1,4 +1,4 @@
-import * as XML from './mini_xml_get';
+import XML from './mini_xml_get';
 import fs from 'fs';
 
 // read file
@@ -6,6 +6,12 @@ const xmlFile = fs
   .readFileSync(__dirname + '/test.xml', 'utf8')
   .replace(/\t/gi, '')
   .replace(/\n/gi, '');
+const bigXmlFile = await fs
+  .readFileSync(__dirname + '/500mo_test.xml', 'utf8')
+  .replace(/\t/gi, '')
+  .replace(/\n/gi, '');
+
+console.log({ bigXmlFile: bigXmlFile.length, done: true });
 
 const cart = {
   prestashop: {
@@ -51,7 +57,15 @@ const cart = {
   }
 };
 
-// const elements = XML.parse(xmlFile);
-// console.log(JSON.stringify(elements, null, 4));
-const fromObject = XML.fromObject(cart);
-console.log(JSON.stringify(fromObject, null, 4));
+const test = async (_) => {
+  console.log('commencing:');
+  const elements = XML.p_parse(bigXmlFile);
+  // const elements = XML.getXmlElementsByName(bigXmlFile, 'row_cart');
+  console.log('done!');
+  // console.log(elements);
+  console.log(JSON.stringify(await elements, null, 4));
+  // const fromObject = XML.fromObject(cart);
+  // console.log(JSON.stringify(fromObject, null, 4));
+};
+
+test();
