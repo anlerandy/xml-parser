@@ -101,83 +101,97 @@ const getXmlAttributesByName = (xml, name) => {
 
 const getXmlAttributeByName = (xml, name) => getXmlAttributesByName(xml, name)[0];
 
-const promisifyElements = (xml) =>
-  new Promise((resolve, reject) => {
-    setTimeout(async () => {
-      try {
-        const obj = await pGetElements(xml);
-        resolve(obj);
-      } catch (e) {
-        reject(e);
-      }
-    }, 0);
-  });
+const getElement = (xml) => {
+  if (!xml) return { result: undefined };
 
-async function pGetElements(xml) {
-  if (!xml) return undefined;
-  const rex = /<(?<name>.*?)(\\b.*?>|>)(.*?)<\/(.*?)>/g;
-  const res = rex.exec(xml.trim());
-  if (!res || !res.length || !res['groups'] || !res['groups'].name) return xml.trim();
-  const { name } = res['groups'];
-  const [cleanName, ..._] = name.split(' ');
-  // Sub elements are registered too.
-  const elements = getXmlElementsByName(xml, cleanName);
-  const attributes = getXmlAttributeByName(xml, cleanName);
-  if ((!elements || !elements.length) && name !== cleanName && name[name.length - 1] === '/') {
-    try {
-      const rex2 = new RegExp(`<${name}>`, 'gmi');
-      const newXml = xml.replace(rex2, '');
-      if (attributes)
-        return {
-          [`${cleanName}_attr`]: attributes,
-          [cleanName]: undefined,
-          ...(await promisifyElements(newXml))
-        };
-      return await promisifyElements(newXml);
-    } catch (e) {
-      console.log({ name, attributes, cleanName });
-      return undefined;
+  const rex = /<(?<name>((?<=<).*?(?=(>|\s>|\s.*?>))))(>|.*?>)(.*?)(<\/\k<name>>)/g;
+  let res = rex.exec(xml.trim());
+
+  if (!res || !res.length || !res['groups'] || !res['groups'].name || res.index !== 0) {
+    const rex2 = /<(?<name>.*?)(\s.*?\/>|\/>)/g;
+    res = rex2.exec(xml.trim());
+    if (!res || !res.length || !res['groups'] || !res['groups'].name) {
+      return { result: xml.trim() };
     }
   }
-  let newXml = '';
-  const rex2 = new RegExp(
-    `<${name.replace(/\)/gim, '\\)').replace(/\(/gim, '\\(')}>(.*?)</${cleanName}>`,
-    'gmi'
-  );
-  if (name[name.length - 1] === '/' && xml.trim().indexOf(`<${name}>`) === 0)
-    newXml = xml.trim().replace(`<${name}>`, '');
-  else newXml = xml.trim().replace(rex2, '');
-  let newElem = await promisifyElements(newXml);
-  if (typeof newElem === 'string') newElem = newElem.trim();
-  if (!newElem) newElem = null;
-  if (typeof newElem !== 'object') newElem = { trash: newElem };
-  if (Object.keys(attributes || {}).length)
-    if (elements.length > 1) {
-      return {
-        [cleanName]: await Promise.all(elements.map(promisifyElements)),
-        [`${cleanName}_attr`]: attributes,
-        ...newElem
-      };
-    } else
-      return {
-        [cleanName]: await promisifyElements(elements[0]),
-        [`${cleanName}_attr`]: attributes,
-        ...newElem
-      };
-  else if (elements.length > 1) {
-    return { [cleanName]: await Promise.all(elements.map(promisifyElements)), ...newElem };
-  } else return { [cleanName]: await promisifyElements(elements[0]), ...newElem };
-}
 
-const parse = async (xml = '') => {
+  const {
+    [0]: captured = '',
+    [5]: element = '',
+    groups: { name }
+  } = res;
+  const [cleanName, ..._] = name.split(' ');
+
+  if (!captured.endsWith(`</${name}>`) && !captured.endsWith(`/>`)) {
+    console.log('Wrong parsing');
+    return { result: undefined };
+  }
+
+  const attributes = getXmlAttributeByName(xml, cleanName);
+  const newXml = xml.replace(captured, '').trim();
+  return { name, element: element.trim(), attributes, rest: newXml };
+};
+
+const getElements = (xml) => {
+  let array = [];
+  while (xml) {
+    const { rest = '', ...obj } = getElement(xml);
+    if (rest && xml === rest) xml = '';
+    else xml = rest;
+    if (obj.result && !obj.element && !xml) return obj.result;
+    array.push(obj);
+  }
+  const sections = array.reduce((obj, { name, attributes, element = undefined }) => {
+    const myEl = { attributes, element };
+    if (!name) return obj;
+    if (obj[name]) return { ...obj, [name]: [...obj[name], myEl] };
+    else return { ...obj, [name]: [myEl] };
+  }, {});
+
+  const elements = Object.keys(sections).reduce((acc, key) => {
+    const section = sections[key];
+    let newAcc = { ...acc };
+
+    // Only takes the first occurences.
+    if (Object.values(section[0].attributes).length)
+      newAcc = { ...newAcc, [`${key}_attr`]: section[0].attributes };
+
+    if (section.length === 1) {
+      const element = getElements(section[0].element);
+      if (Object.values(element).length)
+        return { ...newAcc, [key]: getElements(section[0].element) };
+    } else if (section.length)
+      return {
+        ...newAcc,
+        [key]: section.map(({ element }) => element).map(getElements)
+      };
+    return acc;
+  }, {});
+
+  return elements;
+};
+
+const parse = (xml = '') => {
   xml = xml
     .replace(/\<\?xml(.*?)\?\>/gim, '')
     .replace(/\n/gim, '')
     .trim();
   if (!xml) return undefined;
-  const obj = await promisifyElements(xml);
+  const obj = getElements(xml);
   return obj;
 };
+
+const p_parse = (xml) =>
+  new Promise((res, rej) =>
+    setTimeout((_) => {
+      try {
+        const obj = parse(xml);
+        res(obj);
+      } catch (e) {
+        rej(e);
+      }
+    }, 0)
+  );
 
 // export default parse;
 const XML = {
@@ -190,7 +204,8 @@ const XML = {
   getXmlAttributesByName,
   getXmlAttributeByName,
   parse,
-  fromObject
+  fromObject,
+  p_parse
 };
 
 module.exports = XML;
