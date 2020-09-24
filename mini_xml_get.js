@@ -169,7 +169,7 @@ async function pGetElements(xml) {
   } else return { [cleanName]: await promisifyElements(elements[0]), ...newElem };
 }
 
-const p_parse = async (xml = '') => {
+const parse = async (xml = '') => {
   xml = xml
     .replace(/\<\?xml(.*?)\?\>/gim, '')
     .replace(/\n/gim, '')
@@ -177,61 +177,6 @@ const p_parse = async (xml = '') => {
   if (!xml) return undefined;
   const obj = await promisifyElements(xml);
   return obj;
-};
-
-function getElements(xml) {
-  if (!xml) return undefined;
-  const rex = /<(?<name>.*?)(\\b.*?>|>)(.*?)<\/(.*?)>/g;
-  const res = rex.exec(xml.trim());
-  if (!res || !res.length || !res['groups'] || !res['groups'].name) return xml.trim();
-  const { name } = res['groups'];
-  const [cleanName, ..._] = name.split(' ');
-  // Sub elements are registered too.
-  const elements = getXmlElementsByName(xml, cleanName);
-  const attributes = getXmlAttributeByName(xml, cleanName);
-  if ((!elements || !elements.length) && name !== cleanName && name[name.length - 1] === '/') {
-    const rex2 = new RegExp(`<${name}>`, 'gmi');
-    const newXml = xml.replace(rex2, '');
-    if (attributes)
-      return {
-        [`${cleanName}_attr`]: attributes,
-        [cleanName]: undefined,
-        ...getElements(newXml)
-      };
-    return getElements(newXml);
-  }
-  const rex2 = new RegExp(`<${name}>(.*?)</${cleanName}>`, 'gmi');
-  const newXml = xml.replace(rex2, '');
-  let newElem = getElements(newXml);
-  if (typeof newElem === 'string') newElem = newElem.trim();
-  if (!newElem) newElem = null;
-  if (typeof newElem !== 'object') newElem = { trash: newElem };
-  if (Object.keys(attributes || {}).length)
-    if (elements.length > 1) {
-      return {
-        [cleanName]: elements.map(getElements),
-        [`${cleanName}_attr`]: attributes,
-        ...newElem
-      };
-    } else
-      return {
-        [cleanName]: getElements(elements[0]),
-        [`${cleanName}_attr`]: attributes,
-        ...newElem
-      };
-  else if (elements.length > 1) {
-    return { [cleanName]: elements.map(getElements), ...newElem };
-  } else return { [cleanName]: getElements(elements[0]), ...newElem };
-}
-
-const parse = (xml = '') => {
-  xml = xml
-    .replace(/\<\?xml(.*?)\?\>/gim, '')
-    .replace(/\n/gim, '')
-    .trim();
-  if (!xml) return undefined;
-  const elements = getElements(xml);
-  return elements;
 };
 
 // export default parse;
@@ -245,8 +190,7 @@ const XML = {
   getXmlAttributesByName,
   getXmlAttributeByName,
   parse,
-  fromObject,
-  p_parse
+  fromObject
 };
 
 module.exports = XML;
