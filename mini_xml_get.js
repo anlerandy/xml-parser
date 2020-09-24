@@ -104,13 +104,13 @@ const getXmlAttributeByName = (xml, name) => getXmlAttributesByName(xml, name)[0
 const getElement = (xml) => {
   if (!xml) return { result: undefined };
 
-  const rex = /<(?<name>((?<=<).*?(?=(>|\s>|\s.*?>))))(>|.*?>)(.*?)(<\/\k<name>>)/g;
+  const rex = /<(?<name>((?<=<).*?(?=(>|\s>|\s.*?>))))(>|.*?>)(.*?)(<\/\k<name>>)/;
   let res = rex.exec(xml.trim());
 
   if (!res || !res.length || !res['groups'] || !res['groups'].name || res.index !== 0) {
-    const rex2 = /<(?<name>.*?)(\s.*?\/>|\/>)/g;
+    const rex2 = /<(?<name>.*?)(\s.*?\/>|\/>)/;
     res = rex2.exec(xml.trim());
-    if (!res || !res.length || !res['groups'] || !res['groups'].name) {
+    if (!res || !res.length || !res['groups'] || !res['groups'].name || res.index !== 0) {
       return { result: xml.trim() };
     }
   }
@@ -122,9 +122,12 @@ const getElement = (xml) => {
   } = res;
   const [cleanName, ..._] = name.split(' ');
 
-  if (!captured.endsWith(`</${name}>`) && !captured.endsWith(`/>`)) {
+  if (
+    !captured.startsWith(`<${name}`) ||
+    (!captured.endsWith(`</${name}>`) && !captured.endsWith(`/>`))
+  ) {
     console.log('Wrong parsing');
-    return { result: undefined };
+    return { error: captured };
   }
 
   const attributes = getXmlAttributeByName(xml, cleanName);
@@ -136,9 +139,10 @@ const getElements = (xml) => {
   let array = [];
   while (xml) {
     const { rest = '', ...obj } = getElement(xml);
+    if (obj.error || (obj.result && !obj.element && !xml))
+      return obj.result || { error: 'Something went wrong in the parsing', rest: obj.error };
     if (rest && xml === rest) xml = '';
     else xml = rest;
-    if (obj.result && !obj.element && !xml) return obj.result;
     array.push(obj);
   }
   const sections = array.reduce((obj, { name, attributes, element = undefined }) => {
