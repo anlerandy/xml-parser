@@ -101,18 +101,31 @@ const getXmlAttributesByName = (xml, name) => {
 
 const getXmlAttributeByName = (xml, name) => getXmlAttributesByName(xml, name)[0];
 
+const bypassErrors = true;
+
 const getElement = (xml) => {
   if (!xml) return { result: undefined };
+  let trash = '';
 
   const rex = /<(?<name>((?<=<).*?(?=(>|\s>|\s.*?>))))(>|\s>|\s.*?>)(.*?)(<\/\k<name>>)/;
   let res = rex.exec(xml.trim());
+  const matched = res && res.length && res['groups'] && res['groups'].name;
+  const index = matched && res.index;
 
-  if (!res || !res.length || !res['groups'] || !res['groups'].name || res.index !== 0) {
+  if (!matched || index !== 0) {
     const rex2 = /<(?<name>.*?)(\s.*?\/>|\/>)/;
-    res = rex2.exec(xml.trim());
-    if (!res || !res.length || !res['groups'] || !res['groups'].name || res.index !== 0) {
-      return { result: xml.trim() };
-    }
+    const res2 = rex2.exec(xml.trim());
+    const matched2 = res2 && res2.length && res2['groups'] && res2['groups'].name;
+    const index2 = matched2 && res2.index;
+    if (!matched2 || index2 !== 0) {
+      if ((matched || matched2) && !bypassErrors) return { error: xml.trim() };
+      else if (!matched && !matched2) return { result: xml.trim() };
+      else {
+        if (matched && matched2) res = index2 < index ? res2 : res;
+        else res = matched ? res : res2;
+        trash = xml.slice(0, res.index);
+      }
+    } else res = res2;
   }
 
   const {
@@ -131,8 +144,10 @@ const getElement = (xml) => {
   }
 
   const attributes = getXmlAttributeByName(xml, cleanName);
-  const newXml = xml.replace(captured, '').trim();
-  return { name, element: element.trim(), attributes, rest: newXml };
+  const newXml = trash
+    ? xml.replace(captured, '').replace(trash, '').trim()
+    : xml.replace(captured, '').trim();
+  return { name, element: element.trim(), attributes, rest: newXml, trash };
 };
 
 const getElements = (xml) => {
@@ -142,7 +157,8 @@ const getElements = (xml) => {
     if (rest && xml === rest) xml = '';
     else xml = rest;
     if (obj.error || (obj.result && !obj.element && !xml))
-      return obj.result || { error: 'Something went wrong in the parsing', rest: obj.error };
+      return obj.result || { error: 'Something went wrong in the parsing', startsAt: obj.error };
+    if (obj.trash) array.push({ name: 'trash', element: obj.trash, attributes: {} });
     array.push(obj);
   }
   const sections = array.reduce((obj, { name, attributes, element = undefined }) => {
@@ -162,13 +178,21 @@ const getElements = (xml) => {
 
     if (section.length === 1) {
       const element = getElements(section[0].element);
-      if (element && (typeof x !== 'object' || Object.values(element).length))
+      if (element && (typeof element !== 'object' || Object.values(element).length))
         return { ...newAcc, [key]: element };
-    } else if (section.length)
-      return {
-        ...newAcc,
-        [key]: section.map(({ element }) => element).map(getElements)
-      };
+    } else if (section.length) {
+      const elements = section
+        .map(({ element }) => element)
+        .map(getElements)
+        .filter(
+          (element) => element && (typeof element !== 'object' || Object.values(element).length)
+        );
+      if (elements.length)
+        return {
+          ...newAcc,
+          [key]: elements
+        };
+    }
     return acc;
   }, {});
 
