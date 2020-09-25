@@ -104,7 +104,7 @@ const getXmlAttributeByName = (xml, name) => getXmlAttributesByName(xml, name)[0
 const getElement = (xml) => {
   if (!xml) return { result: undefined };
 
-  const rex = /<(?<name>((?<=<).*?(?=(>|\s>|\s.*?>))))(>|.*?>)(.*?)(<\/\k<name>>)/;
+  const rex = /<(?<name>((?<=<).*?(?=(>|\s>|\s.*?>))))(>|\s>|\s.*?>)(.*?)(<\/\k<name>>)/;
   let res = rex.exec(xml.trim());
 
   if (!res || !res.length || !res['groups'] || !res['groups'].name || res.index !== 0) {
@@ -139,10 +139,10 @@ const getElements = (xml) => {
   let array = [];
   while (xml) {
     const { rest = '', ...obj } = getElement(xml);
-    if (obj.error || (obj.result && !obj.element && !xml))
-      return obj.result || { error: 'Something went wrong in the parsing', rest: obj.error };
     if (rest && xml === rest) xml = '';
     else xml = rest;
+    if (obj.error || (obj.result && !obj.element && !xml))
+      return obj.result || { error: 'Something went wrong in the parsing', rest: obj.error };
     array.push(obj);
   }
   const sections = array.reduce((obj, { name, attributes, element = undefined }) => {
@@ -162,8 +162,8 @@ const getElements = (xml) => {
 
     if (section.length === 1) {
       const element = getElements(section[0].element);
-      if (Object.values(element).length)
-        return { ...newAcc, [key]: getElements(section[0].element) };
+      if (element && (typeof x !== 'object' || Object.values(element).length))
+        return { ...newAcc, [key]: element };
     } else if (section.length)
       return {
         ...newAcc,
