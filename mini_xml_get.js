@@ -107,15 +107,15 @@ const getElement = (xml) => {
   if (!xml) return { result: undefined };
   let trash = '';
 
-  const rex = /<(?<name>((?<=<).*?(?=(>|\s>|\s.*?>))))(>|\s>|\s.*?>)(.*?)(<\/\k<name>>)/;
+  const rex = /<(?<name>((?<=<).*?(?=(\s.*?|)>))).*?>(.*?)(<\/\k<name>>)/;
   let res = rex.exec(xml.trim());
-  const matched = res && res.length && res['groups'] && res['groups'].name;
+  const matched = res && res.length && res['groups'] && !!res['groups'].name;
   const index = matched && res.index;
 
   if (!matched || index !== 0) {
     const rex2 = /<(?<name>.*?)(\s.*?\/>|\/>)/;
     const res2 = rex2.exec(xml.trim());
-    const matched2 = res2 && res2.length && res2['groups'] && res2['groups'].name;
+    const matched2 = res2 && res2.length && res2['groups'] && !!res2['groups'].name;
     const index2 = matched2 && res2.index;
     if (!matched2 || index2 !== 0) {
       if ((matched || matched2) && !bypassErrors) return { error: xml.trim() };
@@ -130,7 +130,7 @@ const getElement = (xml) => {
 
   const {
     [0]: captured = '',
-    [5]: element = '',
+    [4]: element = '',
     groups: { name }
   } = res;
   const [cleanName, ..._] = name.split(' ');
